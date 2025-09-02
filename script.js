@@ -447,10 +447,10 @@ document.addEventListener('DOMContentLoaded', function() {
             
             switch(platform) {
                 case 'facebook':
-                    url = 'https://facebook.com/elunite';
+                    url = 'https://www.facebook.com/elunite/';
                     break;
                 case 'instagram':
-                    url = 'https://instagram.com/elunite';
+                    url = 'https://www.instagram.com/elunite_education/';
                     break;
                 case 'linkedin':
                     url = 'https://linkedin.com/company/elunite';

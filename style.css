@@ -2173,10 +2173,11 @@ body {
 .faq-item {
     background: rgb(15, 23, 42);
     border-radius: 0.75rem;
-    border: 1px solid var(--accent); /* bright yellow accent border */
+    border: 1px solid rgba(255, 193, 7, 0.5); /* softer yellow accent border with reduced opacity */
     margin-bottom: 1rem;
     overflow: hidden;
     transition: all 0.3s ease;
+    
 }
 
 .faq-toggle {
