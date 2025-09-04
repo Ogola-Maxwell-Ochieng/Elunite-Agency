@@ -104,7 +104,7 @@ body {
 
 .nav-logo img {
     height: auto; 
-    width: 15rem;
+    width: 13rem;
     display: block;
     max-height: 100%;
     padding-top: 40px;
@@ -1336,21 +1336,7 @@ body {
     word-break: break-all;
 }
 
-@media (max-width: 640px) {
-    .process-cta .btn-primary {
-        width: 100%;
-        display: block;
-        box-sizing: border-box;
-        margin-bottom: 1rem;
-    }
-    .process-cta .cta-buttons {
-        display: flex;
-        flex-direction: column;
-        gap: 0;
-    }
-}
-
-/* Contact Section */
+/* CONTACT PAGE */
 .contact-section {
     padding: 10rem 0;
     background: rgb(15, 23, 42) !important;
@@ -2244,7 +2230,7 @@ body {
     background: var(--accent);
     color: #000;
     font-weight: 700;
-    font-size: 1.1rem; /* increased button text size */
+    font-size: 1rem; /* increased button text size */
     padding: 1rem 2rem; /* bigger button */
     border-radius: 0.75rem;
     border: none;
@@ -2599,7 +2585,6 @@ img, .footer-logo {
     color: whitesmoke;
     margin-bottom: 24px;
     line-height: 1.8;
-    text-align: justify;
 }
 
 /* MVV Section */
@@ -2849,8 +2834,263 @@ img, .footer-logo {
     transition: all 0.3s ease;
 }
 
+.btn-secondary-action {
+    outline: none;
+    border: none;
+    text-decoration: none;
+    box-shadow: none;
+}
+
 .btn-secondary-action:hover {
-    /* background: rgba(255, 255, 255, 0.1);
-    border-color: rgba(255, 255, 255, 0.5); */
     transform: translateY(-2px);
+}
+
+/* SERVICE PAGE*/
+.services-sections {
+    padding: 5rem 0;
+    background: rgb(22, 34, 65);
+}
+
+.service-section {
+    margin-bottom: 6rem;
+    position: relative;
+    background-color: rgb(15, 23, 42);
+    border-radius: 10px;
+    padding: 30px;
+}
+
+.service-section .service-icon-large {
+    font-size: 4rem;
+    margin-bottom: 1rem;
+    opacity: 0.8;
+    text-align: center;
+}
+
+.service-section .service-section-title {
+    font-size: 3rem;
+    font-weight: 700;
+    color: rgb(255, 198, 26);
+    margin-bottom: 3rem;
+    margin-top: 3rem;
+    padding-bottom: 3rem;
+    line-height: 1.2;
+    text-align: center;
+}
+
+.service-content {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    background: rgb(15, 23, 42);
+    overflow: hidden;
+    padding: 30px;
+    /* box-shadow: var(--shadow-card); */
+    position: relative;
+}
+
+@media (min-width: 768px) {
+    .service-content {
+        grid-template-columns: 1.2fr 0.8fr;
+        gap: 0;
+    }
+}
+
+.service-text {
+    padding: 3rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: relative;
+}
+
+@media (min-width: 600px) {
+    .service-text {
+        padding: 0;
+    }
+}
+
+.service-section-description {
+    font-size: 1.125rem;
+    color: whitesmoke;
+    line-height: 1.7;
+    max-width: 600px;
+    opacity: 0.8;
+}
+
+.service-cta-service {
+    background: rgb(255, 198, 26);
+    color: rgba(30, 45, 64);
+    padding: 2rem;
+    /* margin: 2rem; */
+    border-radius: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    box-shadow: var(--shadow-card);
+}
+
+@media (min-width: 768px) {
+    .service-cta-service {
+        margin: 0;
+        border-radius: 2rem;
+        border: none;
+        background: rgb(255, 198, 26);
+        color: rgba(30, 45, 64);
+    }
+}
+
+.cta-title-service {
+    font-size: 1.75rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    position: relative;
+    z-index: 2;
+}
+
+.cta-subtitle-service {
+    font-size: 1.125rem;
+    margin-bottom: 2rem;
+    opacity: 0.9;
+    position: relative;
+    z-index: 2;
+}
+
+.cta-button-service {
+    background: whitesmoke;
+    color: black;
+    border: none;
+    padding: 0.7rem 1rem;
+    border-radius: 10px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    position: relative;
+    z-index: 2;
+    min-width: 200px;
+}
+
+.cta-button-service:hover {
+    transform: translateY(-3px) scale(1.05);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+}
+
+/* Closing CTA Section */
+.closing-cta-service {
+    background: rgb(255, 198, 26);
+    color: var(--primary-foreground);
+    padding: 5rem 0;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.cta-content-service {
+    position: relative;
+    z-index: 2;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.cta-headline-service {
+    color: black;
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    line-height: 1.2;
+    opacity: 0.8;
+}
+
+@media (min-width: 768px) {
+    .cta-headline-service {
+        font-size: 3rem;
+    }
+}
+
+.cta-subtext-service {
+    font-size: 1.25rem;
+    margin-bottom: 2.5rem;
+    opacity: 0.95;
+    line-height: 1.6;
+    color: black;
+}
+
+.cta-main-button-service {
+    background: rgb(22, 34, 65);
+    color: rgb(255, 198, 26);
+    border: none;
+    padding: 1rem 3rem;
+    border-radius: 10px;
+    font-size: 1.1rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0 6px 20px -5px rgba(0, 0, 0, 0.3);
+    text-shadow: none;
+}
+
+.cta-main-button-service:hover {
+    transform: translateY(-3px) scale(1.05);
+    box-shadow: 0 10px 30px -5px rgba(0, 0, 0, 0.4);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .services-hero {
+        padding: 4rem 0 3rem;
+    }
+    
+    .hero-title {
+        font-size: 2rem;
+    }
+    
+    .hero-description {
+        font-size: 1.125rem;
+    }
+    
+    .service-section {
+        padding: 3rem 0;
+    }
+    
+    .service-title {
+        font-size: 1.75rem;
+    }
+    
+    .service-cta {
+        padding: 2rem 1.5rem;
+    }
+    
+    .cta-title {
+        font-size: 1.25rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .services-sections {
+        padding: 5rem 0 1rem;
+    }
+    
+    .service-section .service-section-title {
+        margin-bottom: 0;
+    }
+    
+    .service-text {
+        padding: 0;
+    }
+    .service-section .service-section-title {
+        font-size: 2rem;
+        padding: 0 1rem;
+    }
+    .cta-title-service {
+        font-size: 1.5rem;
+    }
+}
+
+.service-section-title {
+    scroll-margin-top: 100px; /* Space above the title when scrolled to */
 }

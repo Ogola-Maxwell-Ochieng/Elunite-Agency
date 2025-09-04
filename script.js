@@ -356,42 +356,6 @@ document.addEventListener('DOMContentLoaded', function() {
     updateDots();
 });
 
-// // Contact Form Handling
-// document.addEventListener('DOMContentLoaded', function() {
-//     const contactForm = document.getElementById('contact-form');
-//     if (contactForm) {
-//         contactForm.addEventListener('submit', function(e) {
-//             e.preventDefault();
-            
-//             const formData = new FormData(contactForm);
-//             const name = formData.get('name');
-//             const email = formData.get('email');
-//             const message = formData.get('message');
-            
-//             // Basic validation
-//             if (!name || !email || !message) {
-//                 alert('Please fill in all required fields');
-//                 return;
-//             }
-            
-//             // Simulate form submission
-//             const submitBtn = contactForm.querySelector('.form-submit-btn');
-//             const originalText = submitBtn.innerHTML;
-            
-//             submitBtn.innerHTML = '<i data-lucide="loader-2"></i> Sending...';
-//             submitBtn.disabled = true;
-            
-//             setTimeout(() => {
-//                 alert('Message sent successfully! We\'ll get back to you within 24 hours.');
-//                 contactForm.reset();
-//                 submitBtn.innerHTML = originalText;
-//                 submitBtn.disabled = false;
-//                 lucide.createIcons();
-//             }, 2000);
-//         });
-//     }
-// });
-
 document.addEventListener('DOMContentLoaded', function() {
     const bookNowBtn = document.getElementById("book-now-btn");
     if (bookNowBtn) {
@@ -405,7 +369,7 @@ document.addEventListener('DOMContentLoaded', function() {
             const whatsappURL = `https://wa.me/${phoneNumber}?text=${message}`;
 
             // Redirect to WhatsApp
-            window.location.href = whatsappURL;
+            window.open(whatsappURL, '_blank');
           });
     }
 });
@@ -481,58 +445,6 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 });
-
-// // Initialize Lucide icons for footer
-// document.addEventListener('DOMContentLoaded', function() {
-//     lucide.createIcons();
-// });
-
-
-// document.getElementById("contact-form").addEventListener("submit", async function (e) {
-//   e.preventDefault(); // Prevent page reload
-
-//   const form = e.target;
-//   const formData = new FormData(form);
-
-//   try {
-//     const response = await fetch(form.action, {
-//       method: form.method,
-//       body: formData,
-//       headers: {
-//         Accept: "application/json",
-//       },
-//     });
-
-//     if (response.ok) {
-//       // Show Thank You Message
-//       const thankYouMsg = document.getElementById("thank-you-msg");
-//       thankYouMsg.style.display = "block";
-
-//       // Delay (e.g., 3 seconds), then redirect to WhatsApp
-//       setTimeout(() => {
-//         const message = encodeURIComponent(
-//           `Hello *ELUNITE Team!*\nI just submitted the application form on your website and would love to speak to a consultant.\nThank you!`
-//         );
-
-//         const whatsappLink = `https://wa.me/918050306510?text=${message}`;
-
-//         // Open WhatsApp in new tab
-//         window.open(whatsappLink, "_blank");
-
-//         // Reset form and hide thank-you message
-//         form.reset();
-//         thankYouMsg.style.display = "none";
-
-//         // Refresh the page (optional)
-//         location.reload(); // Reload the page
-//       }, 3000); // 3-second delay
-//     } else {
-//       alert("Something went wrong. Please try again.");
-//     }
-//   } catch (error) {
-//     alert("Network error. Please try again later.");
-//   }
-// });
 
 
 // Student Testimonials Data
@@ -743,4 +655,53 @@ function initFAQ() {
 
 document.addEventListener("DOMContentLoaded", initFAQ);
 
+// Navigate to show the section title/heading
+function navigateToSection(targetPage, sectionId) {
+    if (window.location.pathname.includes(targetPage.replace('.html', ''))) {
+        scrollToSectionTitle(sectionId);
+    } else {
+        window.location.href = `${targetPage}#${sectionId}`;
+    }
+}
 
+// Scroll to show the section title prominently
+function scrollToSectionTitle(sectionId) {
+    const element = document.getElementById(sectionId);
+    if (element) {
+        // Find the title within the section
+        const title = element.querySelector('.service-section-title, h2, h1');
+        const targetElement = title || element;
+        
+        // Calculate position with extra space above the title
+        const rect = targetElement.getBoundingClientRect();
+        const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+        const elementTop = rect.top + scrollTop;
+        
+        // Add buffer space above the title so it's clearly visible
+        const bufferSpace = 80; // Adjust this value as needed
+        
+        window.scrollTo({
+            top: Math.max(0, elementTop - bufferSpace),
+            behavior: 'smooth'
+        });
+    }
+}
+
+// Handle page load navigation
+document.addEventListener('DOMContentLoaded', function() {
+    if (window.location.hash) {
+        const sectionId = window.location.hash.substring(1);
+        setTimeout(() => {
+            scrollToSectionTitle(sectionId);
+        }, 500);
+    }
+});
+
+window.addEventListener('load', function() {
+    if (window.location.hash) {
+        const sectionId = window.location.hash.substring(1);
+        setTimeout(() => {
+            scrollToSectionTitle(sectionId);
+        }, 200);
+    }
+});
