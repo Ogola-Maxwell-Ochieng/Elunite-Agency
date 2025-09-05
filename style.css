@@ -2636,6 +2636,7 @@ img, .footer-logo {
     transition: all 0.3s ease;
     position: relative;
     overflow: hidden;
+    margin-right: 1rem;
 }
 
 .mvv-card::before {
@@ -3055,6 +3056,7 @@ img, .footer-logo {
     
     .service-section {
         padding: 3rem 0;
+        margin-bottom: 3rem;
     }
     
     .service-title {
@@ -3077,8 +3079,13 @@ img, .footer-logo {
     
     .service-section .service-section-title {
         margin-bottom: 0;
+        margin-top: 0;
     }
     
+    .service-section-description{
+        font-size: 1.1rem;
+    }
+
     .service-text {
         padding: 0;
     }
@@ -3088,6 +3095,10 @@ img, .footer-logo {
     }
     .cta-title-service {
         font-size: 1.5rem;
+    }
+    .cta-subtext-service {
+        font-size: 1.1rem;
+        padding: 0 1rem;
     }
 }
 
