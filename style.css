@@ -3105,3 +3105,138 @@ img, .footer-logo {
 .service-section-title {
     scroll-margin-top: 100px; /* Space above the title when scrolled to */
 }
+
+
+/* DESTINATION SECTION */
+.hero-destination {
+    position: relative;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.hero-slides-destination {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.hero-slide-destination {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+}
+
+.hero-slide-destination.active {
+    opacity: 1;
+}
+
+.hero-slide-destination img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.hero-overlay-destination {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.4);
+}
+
+.hero-content-destination {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 10;
+}
+
+.hero-text-destination {
+    text-align: center;
+    color: white;
+    max-width: 800px;
+    padding: 0 20px;
+}
+
+.hero-title-destination {
+    font-size: clamp(2.5rem, 5vw, 4rem);
+    font-weight: 700;
+    margin-bottom: 24px;
+    animation: fadeInUp 1s ease-out;
+}
+
+.hero-subtitle-destination {
+    font-size: clamp(1.1rem, 2vw, 1.5rem);
+    margin-bottom: 32px;
+    opacity: 0.9;
+    animation: fadeInUp 1s ease-out 0.2s both;
+}
+
+.hero-actions-destination {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    align-items: center;
+    animation: fadeInUp 1s ease-out 0.4s both;
+}
+
+.hero-nav-destination {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(255, 255, 255, 0);
+    border: none;
+    color: white;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    z-index: 20;
+}
+
+.hero-nav-destination:hover {
+    background: rgba(255, 255, 255, 0.3);
+}
+
+.hero-prev-destination {
+    left: 20px;
+}
+
+.hero-next-destination {
+    right: 20px;
+}
+
+.hero-dots-destination {
+    position: absolute;
+    bottom: 32px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 8px;
+    z-index: 20;
+}
+
+.hero-dot-destination {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    border: none;
+    background: rgba(255, 255, 255, 0.5);
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.hero-dot-destination.active {
+    background: white;
+}

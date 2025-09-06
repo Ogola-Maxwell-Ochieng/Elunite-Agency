@@ -705,3 +705,76 @@ window.addEventListener('load', function() {
         }, 200);
     }
 });
+
+// DESTINATION HERO SLIDER
+let currentSlide = 0;
+const slides = document.querySelectorAll('.hero-slide-destination');
+const dots = document.querySelectorAll('.hero-dot-destination');
+const heroTitle = document.querySelector('.hero-title-destination');
+const heroSubtitle = document.querySelector('.hero-subtitle-destination');
+
+const slideData = [
+    {
+        title: 'STUDY IN USA',
+        subtitle: 'A catalyst for innovation, diverse culture, and limitless global career pathways.'
+    },
+    {
+        title: 'STUDY IN INDIA',
+        subtitle: 'A vibrant blend of world-class education, rich heritage, and emerging global opportunities.'
+    },
+    {
+        title: 'STUDY IN CANADA',
+        subtitle: 'Inclusive society, research-driven institutions, and pathways to diverse global futures.'
+    },
+    {
+        title: 'STUDY IN AUSTRALIA',
+        subtitle: 'A welcoming destination of academic excellence, cultural diversity, and pathways to global success.'
+    },
+    {
+        title: 'STUDY IN CHINA',
+        subtitle: 'A dynamic hub of innovation and culture, bridging tradition with cutting-edge global progress.'
+    },
+    {
+        title: 'STUDY IN GERMANY',
+        subtitle: 'A rising hub of global education, innovation, and empowered international career options'
+    }
+];
+
+function showSlide(index) {
+    // Remove active class from all slides and dots
+    slides.forEach(slide => slide.classList.remove('active'));
+    dots.forEach(dot => dot.classList.remove('active'));
+    
+    // Add active class to current slide and dot
+    slides[index].classList.add('active');
+    dots[index].classList.add('active');
+    
+    // Update content
+    heroTitle.textContent = slideData[index].title;
+    heroSubtitle.textContent = slideData[index].subtitle;
+    heroCta.textContent = slideData[index].cta;
+    
+    currentSlide = index;
+}
+
+function nextSlide() {
+    const next = (currentSlide + 1) % slides.length;
+    showSlide(next);
+}
+
+function prevSlide() {
+    const prev = (currentSlide - 1 + slides.length) % slides.length;
+    showSlide(prev);
+}
+
+// Hero navigation
+document.getElementById('heroNext').addEventListener('click', nextSlide);
+document.getElementById('heroPrev').addEventListener('click', prevSlide);
+
+// Hero dots
+dots.forEach((dot, index) => {
+    dot.addEventListener('click', () => showSlide(index));
+});
+
+// Auto-play hero slider
+setInterval(nextSlide, 5000);

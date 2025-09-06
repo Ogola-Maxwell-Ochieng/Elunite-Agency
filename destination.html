@@ -12,6 +12,7 @@
     <!-- Favicon -->
     <link rel="icon" type="image/png" sizes="32x32" href="images/favicon.png">
     <link rel="icon" type="image/png" sizes="48x48" href="images/favicon.png">
+    
     <link rel="icon" type="image/png" sizes="192x192" href="images/favicon.png">
     <link rel="apple-touch-icon" sizes="180x180" href="images/favicon.png">
 
@@ -70,133 +71,72 @@
                     <a href="about.html" class="mobile-nav-link">About Us</a>
                     <a href="service.html" class="mobile-nav-link">Services</a>
                     <a href="destination.html" class="mobile-nav-link">Destinations</a>
-                    <a href="blog.html" class="mobile-nav-link">Resources Hub & Blogs</a>
+                    <a href="blog.html" class="nav-link">Resources Hub & Blogs</a>
                     <a href="contact.html" class="mobile-nav-link">Contact</a>
                     <div class="mobile-cta">
-                        <a href="contact.html"><button class="cta-button-full">Apply Now</button></a>
+                        <button class="cta-button-full">Apply Now</button>
                     </div>
                 </div>
             </div>
         </div>
     </nav>
 
-    <!-- Contact Section -->
-    <section id="contact" class="contact-section">
-        <div class="contact-background">
-            <div class="animated-particles">
-                <div class="particle particle-1"></div>
-                <div class="particle particle-2"></div>
-                <div class="particle particle-3"></div>
-                <div class="particle particle-4"></div>
-                <div class="particle particle-5"></div>
-                <div class="particle particle-6"></div>
+    <!-- Hero Section -->
+    <section class="hero-destination" id="hero-destination">
+        <div class="hero-slides-destination">
+            <div class="hero-slide-destination active">
+                <img src="images/USA.webp" alt="USA">
+                <div class="hero-overlay-destination"></div>
+            </div>
+            <div class="hero-slide-destination">
+                <img src="images/India.jpeg" alt="India">
+                <div class="hero-overlay-destination"></div>
+            </div>
+            <div class="hero-slide-destination">
+                <img src="images/Germany.webp" alt="Germany">
+                <div class="hero-overlay-destination"></div>
+            </div>
+            <div class="hero-slide-destination">
+                <img src="https://images.pexels.com/photos/3581364/pexels-photo-3581364.jpeg" alt="Rajasthan Palace">
+                <div class="hero-overlay-destination"></div>
+            </div>
+            <div class="hero-slide-destination">
+                <img src="https://images.pexels.com/photos/3581364/pexels-photo-3581364.jpeg" alt="Rajasthan Palace">
+                <div class="hero-overlay-destination"></div>
+            </div>
+            <div class="hero-slide-destination">
+                <img src="https://images.pexels.com/photos/3581364/pexels-photo-3581364.jpeg" alt="Rajasthan Palace">
+                <div class="hero-overlay-destination"></div>
             </div>
         </div>
 
-        <div class="container">
-            <div class="section-header">
-                <h2 class="section-title-white">Let's Start Your <span class="text-accent">Journey</span></h2>
-                <p class="section-subtitle-white">Ready to start your international education journey? Our expert team is here to support you every step of the way.</p>
+        <div class="hero-content-destination">
+            <div class="hero-text-destination">
+                <h1 class="hero-title-destination">Discover the Taj Mahal</h1>
+                <p class="hero-subtitle-destination">A timeless symbol of love and architectural marvel</p>  
             </div>
+        </div>
 
-            <div class="contact-content">
-                <div class="contact-form-section">
-                    <div class="form-header">
-                        <i data-lucide="message-circle" class="form-icon"></i>
-                        <h3>Send us a message</h3>
-                    </div>
-                    <p class="form-description">Ready to turn your study abroad dream into a reality? Tell us your goals, and our expert consultants will guide you every step of the way, from choosing the right destination to securing your admission with confidence.</p>
+        <!-- Navigation Arrows -->
+        <button class="hero-nav-destination hero-prev-destination" id="heroPrev">
+            <!-- <i class="fas fa-chevron-left"></i> -->
+        </button>
+        <button class="hero-nav-destination hero-next-destination" id="heroNext">
+            <!-- <i class="fas fa-chevron-right"></i> -->
+        </button>
 
-                    <form class="contact-form" id="contact-form" action="https://formspree.io/f/xeozrdkr" method="POST">
-                        <div class="form-group">
-                            <label for="name">Full Name *</label>
-                            <input type="text" id="name" name="name" placeholder="Enter your full name" required>
-                        </div>
-
-                        <div class="form-group">
-                            <label for="email">Email Address *</label>
-                            <input type="email" id="email" name="email" placeholder="Enter your email address" required>
-                        </div>
-
-                        <div class="form-group">
-                            <label for="message">Your Message *</label>
-                            <textarea id="message" name="message" placeholder="Tell us about your study abroad goals, preferred destinations, or any questions you have..." required></textarea>
-                        </div>
-
-                        <button type="submit" class="form-submit-btn">
-                            <i data-lucide="send"></i>
-                            Send Message
-                        </button>
-                    </form>
-
-                    <div id="thank-you-msg" style="display: none; color: rgb(15, 23, 42); font-weight: bold; margin-top: 20px; font-size: 20px;">
-                        🎉 Thank you for contacting ELUNITE! Redirecting you to WhatsApp...
-                    </div>
-
-                </div>
-
-                <div class="contact-info-section">
-                    <div class="info-card">
-                        <div class="info-icon">
-                            <i data-lucide="map-pin"></i>
-                        </div>
-                        <div class="info-content">
-                            <h4>Visit Our Office</h4>
-                            <p>Come for a consultation</p>
-                        </div>
-                        <div class="info-details">TBD, Global Startup</div>
-                    </div>
-
-                    <div class="info-card">
-                        <div class="info-icon">
-                            <i data-lucide="phone"></i>
-                        </div>
-                        <div class="info-content">
-                            <h4>Call Us Now</h4>
-                            <p>Available 24/7</p>
-                        </div>
-                        <div class="info-details">+918050306510</div>
-                    </div>
-
-                    <div class="info-card">
-                        <div class="info-icon">
-                            <i data-lucide="mail"></i>
-                        </div>
-                        <div class="info-content">
-                            <h4>Email Us</h4>
-                            <p>Quick response guaranteed</p>
-                        </div>
-                        <div class="info-details">contact@elunite.com</div>
-                    </div>
-
-                    <div class="consultation-cta">
-                        <h4>Book a Free Consultation</h4>
-                        <p>Schedule a one-on-one session with our expert counselors</p>
-                        <button id="book-now-btn" class="book-btn">Book Now</button>
-                    </div>
-                </div>
-            </div>
-
-            <div class="trust-indicators">
-                <div class="trust-item">
-                    <div class="trust-number">200+</div>
-                    <div class="trust-label">Students Placed</div>
-                </div>
-                <div class="trust-item">
-                    <div class="trust-number">50+</div>
-                    <div class="trust-label">Partner Universities</div>
-                </div>
-                <div class="trust-item">
-                    <div class="trust-number">98%</div>
-                    <div class="trust-label">Success Rate</div>
-                </div>
-                <div class="trust-item">
-                    <div class="trust-number">24/7</div>
-                    <div class="trust-label">Support Available</div>
-                </div>
-            </div>
+        <!-- Dots -->
+        <div class="hero-dots-destination">
+            <button class="hero-dot-destination active" data-slide="0"></button>
+            <button class="hero-dot-destination" data-slide="1"></button>
+            <button class="hero-dot-destination" data-slide="2"></button>
+            <button class="hero-dot-destination" data-slide="3"></button>
+            <button class="hero-dot-destination" data-slide="4"></button>
+            <button class="hero-dot-destination" data-slide="5"></button>
         </div>
     </section>
+
+
 
     <!-- Footer Section -->
     <footer id="footer" class="footer-section">
@@ -297,5 +237,5 @@
         // Initialize Lucide icons
         lucide.createIcons();
     </script>
-</body> 
-</html>  
+</body>
+</html>
