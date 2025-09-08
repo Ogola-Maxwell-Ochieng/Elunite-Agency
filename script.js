@@ -778,3 +778,170 @@ dots.forEach((dot, index) => {
 
 // Auto-play hero slider
 setInterval(nextSlide, 5000);
+
+// Country data with images and detailed information
+    const countryData = {
+        usa: {
+            name: 'United States',
+            flag: '🇺🇸',
+            description: 'Access unparalleled research facilities and innovation hubs. The USA leads in technological advancement with extensive networking opportunities and diverse academic programs.',
+            image: 'linear-gradient(45deg, #2ed573, #1e90ff)',
+            stats: [
+                { number: '200+', label: 'Universities' },
+                { number: '3 Years', label: 'STEM OPT' },
+                { number: '85%', label: 'Research Impact' },
+                { number: '$45K', label: 'Avg. Tuition' }
+            ]
+        },
+        india: {
+            name: 'India',
+            flag: '🇮🇳',
+            description: 'Access affordable, quality education with growing global recognition. India excels in technology and engineering with English-medium instruction and vibrant campus life.',
+            image: 'linear-gradient(45deg, #e17055, #74b9ff)',
+            stats: [
+                { number: '80+', label: 'Universities' },
+                { number: 'English', label: 'Medium' },
+                { number: '75%', label: 'Tech Programs' },
+                { number: '$5K', label: 'Avg. Tuition' }
+            ]
+        },
+        canada: {
+            name: 'Canada',
+            flag: '🇨🇦',
+            description: 'Experience world-class education in one of the most welcoming countries. Canada offers excellent post-graduation work opportunities and a clear pathway to permanent residence.',
+            image: 'linear-gradient(45deg, #ff6b6b, #ee5a24)',
+            stats: [
+                { number: '150+', label: 'Universities' },
+                { number: '3 Years', label: 'Work Permit' },
+                { number: '95%', label: 'Student Satisfaction' },
+                { number: '$25K', label: 'Avg. Tuition' }
+            ]
+        },
+        australia: {
+            name: 'Australia',
+            flag: '🇦🇺',
+            description: 'Discover high-quality education combined with a vibrant lifestyle. Australia is renowned for its research excellence and beautiful campuses across diverse cities.',
+            image: 'linear-gradient(45deg, #feca57, #ff9ff3)',
+            stats: [
+                { number: '120+', label: 'Universities' },
+                { number: '20hrs', label: 'Work/Week' },
+                { number: '92%', label: 'Graduate Employment' },
+                { number: '$35K', label: 'Avg. Tuition' }
+            ]
+        },
+        china: {
+            name: 'China',
+            flag: '🇨🇳',
+            description: 'Study in the world\'s fastest-growing education market with extensive scholarship opportunities. China combines ancient wisdom with cutting-edge technology and research.',
+            image: 'linear-gradient(45deg, #fd79a8, #e84393)',
+            stats: [
+                { number: '60+', label: 'Universities' },
+                { number: '90%', label: 'Scholarship Rate' },
+                { number: 'Mandarin', label: 'Language Boost' },
+                { number: '$14K', label: 'Avg. Tuition' }
+            ]
+        },
+        germany: {
+            name: 'Germany',
+            flag: '🇩🇪',
+            description: 'Experience world-renowned engineering and research excellence with no tuition fees at public universities. Germany offers exceptional post-study opportunities in Europe.',
+            image: 'linear-gradient(45deg, #ff7675, #636e72)',
+            stats: [
+                { number: '70+', label: 'Universities' },
+                { number: '18 Months', label: 'Work Visa' },
+                { number: '€0', label: 'Public Tuition' },
+                { number: 'EU', label: 'Access' }
+            ]
+        }
+        
+    };
+
+    // Get DOM elements
+    const countryNavBtns = document.querySelectorAll('.country-nav-btn');
+    const featuredContent = document.getElementById('featured-content');
+    const featuredImage = document.getElementById('featured-image');
+    const destinationCards = document.querySelectorAll('.destination-card');
+
+    // Initialize with Canada
+    updateFeaturedDestination('canada');
+
+    // Country navigation event listeners
+    countryNavBtns.forEach(btn => {
+        btn.addEventListener('click', function() {
+            const country = this.getAttribute('data-country');
+            
+            // Update active state
+            countryNavBtns.forEach(b => b.classList.remove('active'));
+            this.classList.add('active');
+            
+            // Update featured section
+            updateFeaturedDestination(country);
+            
+            // Scroll to featured section or highlight card
+            const targetCard = document.getElementById(country + '-card');
+            if (targetCard) {
+                targetCard.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'center'
+                });
+                
+                // Add highlight effect
+                highlightCard(targetCard);
+            }
+        });
+    });
+
+    // Update featured destination section
+    function updateFeaturedDestination(countryKey) {
+        const data = countryData[countryKey];
+        
+        if (featuredContent && data) {
+            featuredContent.innerHTML = `
+                <h2>${data.flag} ${data.name}</h2>
+                <p class="featured-description">${data.description}</p>
+                <div class="featured-stats">
+                    ${data.stats.map(stat => `
+                        <div class="stat-item">
+                            <span class="stat-number">${stat.number}</span>
+                            <span class="stat-label">${stat.label}</span>
+                        </div>
+                    `).join('')}
+                </div>
+            `;
+        }
+        
+        if (featuredImage && data) {
+            featuredImage.style.background = data.image;
+        }
+    }
+
+    // Highlight card function
+    function highlightCard(card) {
+        card.classList.remove('highlight-card');
+        setTimeout(() => {
+            card.classList.add('highlight-card');
+        }, 100);
+        
+        setTimeout(() => {
+            card.classList.remove('highlight-card');
+        }, 2100);
+    }
+
+    // Intersection Observer for animations
+    const observerOptions = {
+        threshold: 0.2,
+        rootMargin: '0px 0px -50px 0px'
+    };
+
+    const observer = new IntersectionObserver(function(entries) {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('animate-in');
+            }
+        });
+    }, observerOptions);
+
+    // Observe destination cards
+    destinationCards.forEach(card => {
+        observer.observe(card);
+    });

@@ -25,10 +25,10 @@
     
     <!--Favicons  -->
     <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
-    
+
 </head>
 <body>
-    <!-- Navigation -->
+     <!-- Navigation -->
     <nav id="navbar" class="navbar">
         <div class="nav-container">
             <div class="nav-content">
@@ -70,132 +70,46 @@
                     <a href="about.html" class="mobile-nav-link">About Us</a>
                     <a href="service.html" class="mobile-nav-link">Services</a>
                     <a href="destination.html" class="mobile-nav-link">Destinations</a>
-                    <a href="blog.html" class="mobile-nav-link">Resources Hub & Events</a>
+                    <a href="blog.html" class="nav-link">Resources Hub & Events</a>
                     <a href="contact.html" class="mobile-nav-link">Contact</a>
                     <div class="mobile-cta">
-                        <a href="contact.html"><button class="cta-button-full">Apply Now</button></a>
+                        <button class="cta-button-full">Apply Now</button>
                     </div>
                 </div>
             </div>
         </div>
     </nav>
 
-    <!-- Contact Section -->
-    <section id="contact" class="contact-section">
-        <div class="contact-background">
-            <div class="animated-particles">
-                <div class="particle particle-1"></div>
-                <div class="particle particle-2"></div>
-                <div class="particle particle-3"></div>
-                <div class="particle particle-4"></div>
-                <div class="particle particle-5"></div>
-                <div class="particle particle-6"></div>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero-section">
+        <!-- Background Image -->
+        <div class="hero-background">
+            <!-- Gradient Overlay -->
+            <div class="hero-overlay"></div>
+        </div>
+
+        <!-- Content -->
+        <div class="hero-content">
+            <div class="hero-inner">
+
+                <!-- Main Headline -->
+                <h1 class="hero-title">
+                    Resources Hub & <br>
+                    <span class="hero-title-span">Events</span>
+                </h1>
+
+                <!-- Subtitle -->
+                <p class="hero-subtitle">
+                    Resources, events, and insights designed to guide your study abroad journey. From scholarship updates to career workshops that turn aspirations into achievements.
+                </p>
+                
             </div>
         </div>
 
-        <div class="container">
-            <div class="section-header">
-                <h2 class="section-title-white">Let's Start Your <span class="text-accent">Journey</span></h2>
-                <p class="section-subtitle-white">Ready to start your international education journey? Our expert team is here to support you every step of the way.</p>
-            </div>
-
-            <div class="contact-content">
-                <div class="contact-form-section">
-                    <div class="form-header">
-                        <i data-lucide="message-circle" class="form-icon"></i>
-                        <h3>Send us a message</h3>
-                    </div>
-                    <p class="form-description">Ready to turn your study abroad dream into a reality? Tell us your goals, and our expert consultants will guide you every step of the way, from choosing the right destination to securing your admission with confidence.</p>
-
-                    <form class="contact-form" id="contact-form" action="https://formspree.io/f/xeozrdkr" method="POST">
-                        <div class="form-group">
-                            <label for="name">Full Name *</label>
-                            <input type="text" id="name" name="name" placeholder="Enter your full name" required>
-                        </div>
-
-                        <div class="form-group">
-                            <label for="email">Email Address *</label>
-                            <input type="email" id="email" name="email" placeholder="Enter your email address" required>
-                        </div>
-
-                        <div class="form-group">
-                            <label for="message">Your Message *</label>
-                            <textarea id="message" name="message" placeholder="Tell us about your study abroad goals, preferred destinations, or any questions you have..." required></textarea>
-                        </div>
-
-                        <button type="submit" class="form-submit-btn">
-                            <i data-lucide="send"></i>
-                            Send Message
-                        </button>
-                    </form>
-
-                    <div id="thank-you-msg" style="display: none; color: rgb(15, 23, 42); font-weight: bold; margin-top: 20px; font-size: 20px;">
-                        🎉 Thank you for contacting ELUNITE! Redirecting you to WhatsApp...
-                    </div>
-
-                </div>
-
-                <div class="contact-info-section">
-                    <div class="info-card">
-                        <div class="info-icon">
-                            <i data-lucide="map-pin"></i>
-                        </div>
-                        <div class="info-content">
-                            <h4>Visit Our Office</h4>
-                            <p>Come for a consultation</p>
-                        </div>
-                        <div class="info-details">TBD, Global Startup</div>
-                    </div>
-
-                    <div class="info-card">
-                        <div class="info-icon">
-                            <i data-lucide="phone"></i>
-                        </div>
-                        <div class="info-content">
-                            <h4>Call Us Now</h4>
-                            <p>Available 24/7</p>
-                        </div>
-                        <div class="info-details">+918050306510</div>
-                    </div>
-
-                    <div class="info-card">
-                        <div class="info-icon">
-                            <i data-lucide="mail"></i>
-                        </div>
-                        <div class="info-content">
-                            <h4>Email Us</h4>
-                            <p>Quick response guaranteed</p>
-                        </div>
-                        <div class="info-details">contact@elunite.com</div>
-                    </div>
-
-                    <div class="consultation-cta">
-                        <h4>Book a Free Consultation</h4>
-                        <p>Schedule a one-on-one session with our expert counselors</p>
-                        <button id="book-now-btn" class="book-btn">Book Now</button>
-                    </div>
-                </div>
-            </div>
-
-            <div class="trust-indicators">
-                <div class="trust-item">
-                    <div class="trust-number">200+</div>
-                    <div class="trust-label">Students Placed</div>
-                </div>
-                <div class="trust-item">
-                    <div class="trust-number">50+</div>
-                    <div class="trust-label">Partner Universities</div>
-                </div>
-                <div class="trust-item">
-                    <div class="trust-number">98%</div>
-                    <div class="trust-label">Success Rate</div>
-                </div>
-                <div class="trust-item">
-                    <div class="trust-number">24/7</div>
-                    <div class="trust-label">Support Available</div>
-                </div>
-            </div>
-        </div>
+        <!-- Floating Elements -->
+        <div class="floating-element floating-1"></div>
+        <div class="floating-element floating-2"></div>
     </section>
 
     <!-- Footer Section -->
@@ -291,11 +205,11 @@
             </div>
         </div>
     </footer>
-    
+
     <script src="script.js"></script>
     <script>
         // Initialize Lucide icons
         lucide.createIcons();
     </script>
-</body> 
-</html>  
+</body>
+</html>    
